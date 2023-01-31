@@ -32,12 +32,37 @@
 
 // You can assume that the input number is a positive integer.
 
-const isPrime = (n) => {
-  if(n < 2) return false
-  for(let i = 2; i < n; i++){
-    if(n % i === 0){
-      return false
+// const isPrime = (n) => {
+//   if(n < 2) return false
+//   for(let i = 2; i < n; i++){
+//     if(n % i === 0){
+//       return false
+//     }
+//   }
+//  return true
+// };
+
+// Write a function, uncompress, that takes in a string as an argument. The input string will be formatted into multiple groups according to the following pattern:
+
+
+const uncompress = (s) => {
+  let newString = []
+  let i = 0;
+  let j = 0;
+  let numbers = '0123456789'
+  while(j < s.length){
+    if(numbers.includes(s[j])){
+      j++
+    }else {
+//       if it includes a character that is not a number, take the number that precedes the non-digit character
+      let number = s.slice(i, j)
+      for(let count = 0; count < number; count++){
+        newString.push(s[j])
+      }
+    j++
+    i = j
     }
+  
   }
- return true
+  return newString.join('')
 };
