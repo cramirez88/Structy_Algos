@@ -45,24 +45,53 @@
 // Write a function, uncompress, that takes in a string as an argument. The input string will be formatted into multiple groups according to the following pattern:
 
 
-const uncompress = (s) => {
-  let newString = []
-  let i = 0;
-  let j = 0;
-  let numbers = '0123456789'
-  while(j < s.length){
-    if(numbers.includes(s[j])){
-      j++
-    }else {
-//       if it includes a character that is not a number, take the number that precedes the non-digit character
-      let number = s.slice(i, j)
-      for(let count = 0; count < number; count++){
-        newString.push(s[j])
-      }
-    j++
-    i = j
-    }
+// const uncompress = (s) => {
+//   let newString = []
+//   let i = 0;
+//   let j = 0;
+//   let numbers = '0123456789'
+//   while(j < s.length){
+//     if(numbers.includes(s[j])){
+//       j++
+//     }else {
+// //       if it includes a character that is not a number, take the number that precedes the non-digit character
+//       let number = s.slice(i, j)
+//       for(let count = 0; count < number; count++){
+//         newString.push(s[j])
+//       }
+//     j++
+//     i = j
+//     }
   
-  }
-  return newString.join('')
-};
+//   }
+//   return newString.join('')
+// };
+
+
+// Write a function, compress, that takes in a string as an argument. The function should return a compressed version of the string where consecutive occurrences of the same characters are compressed into the number of occurrences followed by the character. Single character occurrences should not be changed.
+
+
+// const compress = (s) => {
+//   let firstPointer = 0
+//   let secondPointer = 0
+//   let newArr = []
+//   while(firstPointer <= s.length){
+//     if(s[firstPointer] === s[secondPointer]){
+//       firstPointer++
+//     }else {
+//       const num = firstPointer - secondPointer
+//       if(num === 1){
+//         newArr.push(s[secondPointer])
+//       }else {
+//         newArr.push(String(num), s[secondPointer])
+//       }
+//       secondPointer = firstPointer
+//     }
+   
+//   }
+  
+//   return console.log(newArr.join(''))
+// };
+
+// compress('ccaaatsss')
+
